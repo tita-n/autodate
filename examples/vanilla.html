@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>autodate Demo</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f0f2f5;
+    }
+    footer {
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <footer>
+    <p>Default: <span id="year1"></span></p>
+    <p>Range (2020): <span id="year2"></span></p>
+    <p>Full: <span id="year3"></span></p>
+  </footer>
+
+  <script src="../dist/index.global.js"></script>
+  <script>
+    // Using the global AutoDate object provided by IIFE build
+    AutoDate.autoDate('#year1');
+    
+    AutoDate.autoDate('#year2', {
+      format: 'range',
+      startYear: 2020
+    });
+
+    AutoDate.autoDate('#year3', {
+      format: 'full',
+      startYear: 2018
+    });
+  </script>
+</body>
+</html>
